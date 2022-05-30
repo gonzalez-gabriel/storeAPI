@@ -19,9 +19,8 @@ const CardsPage = (props) => {
   return (
     <div>
       <div className="header">
-      <h1>PRODUCTS</h1>
-      <Form update={setUpdate}/>
-
+        <h1>PRODUCTS</h1>
+        <Form update={setUpdate}/>
       </div>
       <Filters startFilter={setStartFilter} filters={setFilters}/>
       <CardList update={update} setUpdate={setUpdate} startFilter={startFilter} filters={filters}/>

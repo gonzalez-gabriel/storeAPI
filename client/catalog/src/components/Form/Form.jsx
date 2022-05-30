@@ -23,7 +23,9 @@ const Form = ({update}) => {
       .then(res => {
         console.log(res);
         console.log(res.data);
-      }).finally(()=>update((prev)=>!prev))
+      }).finally(()=>{
+        update((prev)=>!prev)
+        setOpenForm(false)})
 
   }
 

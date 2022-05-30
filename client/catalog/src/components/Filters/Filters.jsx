@@ -10,31 +10,30 @@ const Filters = ({startFilter,filters}) =>{
   }
 
   return(
-    <div>
-      <h1>Filters</h1>
-      <form action="">
+    <div className="filters">
+      <form className="filterForm" action="">
         <label htmlFor="name">
-          Name:
+          <p>Name</p>
           <input id="name" type="text" name="name" placeholder="Name" onChange={handleChange('name')}/>
         </label>
         <label htmlFor="maxPrice">
-          Max Price:
-          <input id="maxPrice" type="text" name="maxPrice" placeholder="Max Price" onChange={handleChange('maxPrice')}/>
+          <p>Max Price:</p> 
+          <input id="maxPrice" type="number" name="maxPrice" placeholder="Max Price" onChange={handleChange('maxPrice')}/>
         </label>
         <label htmlFor="minPrice">
-          Min Price:
-          <input id="minPrice" type="text" name="minPrice" placeholder="Min Price" onChange={handleChange('minPrice')}/>
+          <p>Min Price:</p> 
+          <input id="minPrice" type="number" name="minPrice" placeholder="Min Price" onChange={handleChange('minPrice')}/>
         </label>
         <label htmlFor="description">
-          Description:
+          <p>Description:</p>
           <input id="description" type="text" name="description" placeholder="Description" onChange={handleChange('description')}/>
         </label>
         <label htmlFor="category">
-          category:
+          <p>Category:</p>
           <input id="category" type="text" name="category" placeholder="Category" onChange={handleChange('category')}/>
         </label>
       </form>
-      <button onClick={()=>startFilter((prev)=>!prev)}>Filtrar</button>
+      <button onClick={()=>startFilter((prev)=>!prev)}>FILTER</button>
     </div>
   )
 }

@@ -41,22 +41,23 @@ const Card = ({ data, update }) => {
     <div className="card">
       {!openForm ? (
         <>
+        <div className="card-content">
           <div className="card-image">
             <img src={data.image} onError={(event)=>event.target.src='https://coacademy-server-jc.com/uploads/courses/images/890.jpg'} alt="notFound" />
           </div>
           <div className="card-description">
             <h3>{data.name}</h3>
-            <p>${data.price}</p>
-            <p>{data.description}</p>
-            <button onClick={deleteCard}>Delete</button>
-
-            <button onClick={openEditForm} disabled={openForm}>
-              Edit
-            </button>
+            <p>$ {data.price}</p>
+            <p id="description-text">{data.description}</p>
+          </div>
+        </div>
+          <div className="card-buttons">
+            <button onClick={openEditForm} disabled={openForm}>EDIT</button>
+            <button className="button-delete" onClick={deleteCard}>DELETE</button>
           </div>
         </>
       ) : (
-        <>
+        <div className="card-form">
           <h3>formulario de edicion</h3>
           <form action="">
             <label htmlFor="name">
@@ -114,7 +115,6 @@ const Card = ({ data, update }) => {
                 value={product.description}
               />
             </label>
-            {/* <input type="submit" value="Create" onClick={submit}/> */}
           </form>
           <div>
             <button onClick={updateCard} disabled={!openForm}>
@@ -124,7 +124,7 @@ const Card = ({ data, update }) => {
               Cancel edit
             </button>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
