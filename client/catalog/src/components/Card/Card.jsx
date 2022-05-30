@@ -42,7 +42,7 @@ const Card = ({ data, update }) => {
       {!openForm ? (
         <>
           <div className="card-image">
-            <img srcset={data.image} alt="notFound" />
+            <img src={data.image} onError={(event)=>event.target.src='https://coacademy-server-jc.com/uploads/courses/images/890.jpg'} alt="notFound" />
           </div>
           <div className="card-description">
             <h3>{data.name}</h3>

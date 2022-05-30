@@ -1,0 +1,109 @@
+.modal{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:rgba(0,0,0,0.5);
+  position:fixed;
+  transition: all .5s ease;
+  top:0;
+  left:0;
+}
+.modal-content {
+  width:500px;
+  height:500px;
+  background-color:white;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  /* transition: all 1s ease; */
+  padding:2rem;
+}
+
+.postForm{
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+  align-items:center;
+  width:100%;
+  height:100%;
+}
+.postForm label{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-size:1.1rem;
+  font-weight:bold;
+
+}
+
+.addButton{
+  position: absolute;
+  right:25%;
+  top:2%;
+}
+
+.addButton button{
+  
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; /* Green */
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition: all .5s ease;
+}
+
+.addButton button:hover{
+  background-color: #4CAF50;
+  color: white;
+}
+
+.formButtons{
+  display:flex;
+  justify-content:space-evenly;
+  width:100%;
+}
+.formButtons .formButton{
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  padding: 10px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition: all .5s ease;
+}
+
+.formButtons .formButton:hover{
+  background-color: #4CAF50;
+  color: white;
+}
+
+#cancelButton{
+  border: 2px solid #f44336;;
+}
+
+#cancelButton:hover{
+  background-color: #f44336;
+  color: white;
+}
+
+.modal input{
+  width:100%;
+  height:30px;
+  border:1px solid black;
+  border-radius:5px;
+  padding:5px;
+}
