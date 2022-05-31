@@ -2,8 +2,6 @@ import React,{useState,useEffect} from 'react'
 import Card from '../Card/Card'
 import axios from 'axios'
 import './CardList.css'
-//import {getProductsFunction} from 'carpeta services'
-
 
 const CardList = ({update, setUpdate, startFilter, filters}) => {
 

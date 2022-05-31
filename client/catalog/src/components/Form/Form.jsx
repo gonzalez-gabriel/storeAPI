@@ -80,10 +80,6 @@ const Form = ({update}) => {
                 <option value="Remeras">REMERA</option>
               </select>
             </label>
-              {/* <label htmlFor="category">
-                Category:
-                <input required id="category" type="text" name="category" placeholder="Category" onChange={handleChange('category')}/>
-              </label> */}
               <label htmlFor="description">
                 Description:
                 <textarea required cols="25" rows="2" id="description" type="text" name="description" placeholder="Description" onChange={handleChange('description')}/>
