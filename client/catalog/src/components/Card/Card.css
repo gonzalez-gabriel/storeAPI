@@ -1,10 +1,10 @@
 .card{
-  border:1px solid red;
   width:300px;
   height:400px;
   padding:1rem;
   background-color: #201e1e;
   position: relative;
+  border-radius: 8px;
 }
 .card-content{
   display:flex;
@@ -18,6 +18,8 @@
   height:200px;
   overflow: hidden;
   border:1px solid black;
+  background-color:white;
+  border-radius:8px;
 }
 img{
   width:100%;
@@ -35,6 +37,7 @@ img{
   font-size:1.1rem;
   font-weight:bold;
   color:white;
+  text-align: center;
 }
 .card-description p{
   font-size:1.1rem;
@@ -90,4 +93,80 @@ img{
   background-color:rgba(255, 0, 0, 0.2);
   color: #f63224;
   border: 2px solid #f63224;
+}
+
+
+.card-form{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  align-items:center;
+  padding:1rem;
+  background-color: #6e6a6a;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  transition: all .5s ease;
+  border-radius: 8px;
+
+}
+
+.card-form label{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-size:1rem;
+  font-weight:bold;
+  color:rgb(15, 14, 14);
+}
+.card-form label input, .card-form label textarea, .card-form label select{
+  width:100%;
+  height:1.5rem;
+  border:1px solid #6e6a6a;
+  border-radius:8px;
+  padding:.7rem;
+  font-size:.8rem;
+  color:rgb(15, 14, 14);
+  text-align: center;
+}
+.card-form label textarea{
+  height:4rem;
+
+}
+
+.card-form label select{
+  /* font-size:.2rem; */
+  padding:0rem;
+
+}
+
+.button-cancel{
+  background-color: #201e1e;
+  color: #f44336;
+  border: 2px solid #f44336;
+}
+.button-cancel:hover{
+  background-color:rgba(255, 0, 0, 0.2);
+  color: #f63224;
+  border: 2px solid #f63224;
+}
+
+.button-cancel{
+  border-radius: 50%;
+  background-color: #201e1e;
+  /* background-color: white;
+  color: black; */
+  padding: 9px 9px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-weight:bold;
+  cursor:pointer;
+  transition: all .5s ease;
+  position:absolute;
+  top:7%;
+  right:8%;
 }

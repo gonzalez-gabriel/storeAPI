@@ -14,7 +14,7 @@ const Card = ({ data, update }) => {
 
   const deleteCard = () => {
     axios
-      .delete(`http://localhost:5000/catalog/${data._id}`)
+      .delete(`https://aenima-api-gabriel-gonzalez.herokuapp.com/catalog/${data._id}`)
       .finally(() => update((prev) => !prev));
   };
 
@@ -27,7 +27,7 @@ const Card = ({ data, update }) => {
 
   const updateCard = ()=>{
     axios
-      .put(`http://localhost:5000/catalog/${data._id}`, product)
+      .put(`https://aenima-api-gabriel-gonzalez.herokuapp.com/catalog/${data._id}`, product)
       .then(()=>closeEditForm())
       .finally(() => update((prev) => !prev));
   }
@@ -58,7 +58,7 @@ const Card = ({ data, update }) => {
         </>
       ) : (
         <div className="card-form">
-          <h3>formulario de edicion</h3>
+          <h3>EDIT FORM</h3>
           <form action="">
             <label htmlFor="name">
               Name:
@@ -83,7 +83,7 @@ const Card = ({ data, update }) => {
               />
             </label>
             <label htmlFor="image">
-              image:
+              Image_url:
               <input
                 id="image"
                 type="text"
@@ -94,19 +94,18 @@ const Card = ({ data, update }) => {
               />
             </label>
             <label htmlFor="category">
-              category:
-              <input
-                id="category"
-                type="text"
-                name="category"
-                placeholder="Category"
-                onChange={handleChange('category')}
-                value={product.category}
-              />
+              Category:
+              <select onChange={handleChange('category')} name="category" id="category">
+                <option value="Calzado">CALZADO</option>
+                <option value="Pantalon">PANTALON</option>
+                <option value="Remeras">REMERA</option>
+              </select>
             </label>
             <label htmlFor="description">
               Description:
               <textarea
+                cols="25" 
+                rows="2"
                 id="description"
                 type="text"
                 name="description"
@@ -116,14 +115,14 @@ const Card = ({ data, update }) => {
               />
             </label>
           </form>
-          <div>
+          <div className="card-buttons">
             <button onClick={updateCard} disabled={!openForm}>
-              Finish edit
-            </button>
-            <button onClick={closeEditForm} disabled={!openForm}>
-              Cancel edit
+              EDIT
             </button>
           </div>
+            <button className="button-cancel" onClick={closeEditForm} disabled={!openForm}>
+              X
+            </button>
         </div>
       )}
     </div>

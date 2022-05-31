@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import CardList from '../../components/CardList/CardList'
 import Form from '../../components/Form/Form'
 import Filters from '../../components/Filters/Filters'

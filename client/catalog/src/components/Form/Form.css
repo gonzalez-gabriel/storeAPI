@@ -99,10 +99,20 @@
   color: white;
 }
 
-.modal input{
+.modal input, .modal textarea, .modal select{
   width:100%;
   height:30px;
   border:1px solid black;
-  border-radius:5px;
-  padding:5px;
+  border-radius:8px;
+  padding:.7rem;
+  text-align: center;
+
+}
+.modal select{
+  padding:0;
+  width:100px;
+}
+.modal textarea{
+  height:2.5rem;
+  padding:.2rem;
 }

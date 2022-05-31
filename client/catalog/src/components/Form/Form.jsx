@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState, useEffect} from 'react'
 import axios from 'axios';  
 import './Form.css'
 
@@ -18,16 +18,25 @@ const Form = ({update}) => {
 
   const submit = (e) => {
     e.preventDefault();
-   
-    axios.post('http://localhost:5000/catalog', product)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      }).finally(()=>{
-        update((prev)=>!prev)
-        setOpenForm(false)})
+    if(product.name && product.price && product.image && product.description && product.category){
+      axios
+        .post('https://aenima-api-gabriel-gonzalez.herokuapp.com/catalog', product)
+        .then(()=>setOpenForm(false))
+        .finally(() => update((prev) => !prev));
+    }else{
+      alert('Todos los campos deben ser llenados')
+    }
 
   }
+  useEffect(()=>{
+    setProduct({
+      name:'',
+      price:'',
+      image:'',
+      description:'',
+      category:''
+    })
+  },[openForm])
 
   const handleChange = (inputKey) =>(e) => {
     setProduct((prev)=>{
@@ -49,10 +58,10 @@ const Form = ({update}) => {
         <div className="modal">
           <div className="modal-content">
             <h1>New Product</h1>
-            <form action="" className="postForm">
+            <form required className="postForm">
               <label htmlFor="name">
                 Name:
-                <input id="name" type="text" name="name" placeholder="Name" onChange={handleChange('name')}/>
+                <input required id="name" type="text" name="name" placeholder="Name" onChange={handleChange('name')}/>
               </label>
               <label htmlFor="price">
                 Price:
@@ -60,12 +69,21 @@ const Form = ({update}) => {
               </label>
               <label htmlFor="image">
                 Image_url:
-                <input required id="image" type="url" name="image" placeholder="Image_url" onChange={handleChange('image')}/>
+                <input required id="image" type="text" name="image" placeholder="Image_url" onChange={handleChange('image')}/>
               </label>
               <label htmlFor="category">
+              Category:
+              <select onChange={handleChange('category')} name="category" id="category">
+                <option value="">CATEGORIA</option>
+                <option value="Calzado">CALZADO</option>
+                <option value="Pantalon">PANTALON</option>
+                <option value="Remeras">REMERA</option>
+              </select>
+            </label>
+              {/* <label htmlFor="category">
                 Category:
                 <input required id="category" type="text" name="category" placeholder="Category" onChange={handleChange('category')}/>
-              </label>
+              </label> */}
               <label htmlFor="description">
                 Description:
                 <textarea required cols="25" rows="2" id="description" type="text" name="description" placeholder="Description" onChange={handleChange('description')}/>

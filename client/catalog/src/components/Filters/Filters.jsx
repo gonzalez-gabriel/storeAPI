@@ -29,8 +29,13 @@ const Filters = ({startFilter,filters}) =>{
           <input id="description" type="text" name="description" placeholder="Description" onChange={handleChange('description')}/>
         </label>
         <label htmlFor="category">
-          <p>Category:</p>
-          <input id="category" type="text" name="category" placeholder="Category" onChange={handleChange('category')}/>
+              <p>Category:</p> 
+              <select onChange={handleChange('category')} name="category" id="category">
+                <option value="">TODAS</option>
+                <option value="Calzado">CALZADO</option>
+                <option value="Pantalon">PANTALON</option>
+                <option value="Remeras">REMERAS</option>
+              </select>
         </label>
       </form>
       <button onClick={()=>startFilter((prev)=>!prev)}>FILTER</button>
